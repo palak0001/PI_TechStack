@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import { Button } from '../components/Common.jsx';
+import { API_ENDPOINTS } from '../config/api.js';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -40,44 +41,29 @@ export const Contact = () => {
     setStatus({ type: '', message: '' });
 
     try {
-      // Check if API is available, if not, show success message
-      try {
-        const response = await axios.post('/api/contact', formData, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
+      const response = await axios.post(API_ENDPOINTS.CONTACT_SUBMIT, formData, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
 
-        if (response.data.success) {
-          setStatus({
-            type: 'success',
-            message: response.data.message || 'Your message has been sent successfully!'
-          });
-          setFormData({ name: '', email: '', phone: '', message: '' });
-        } else {
-          setStatus({
-            type: 'error',
-            message: response.data.message || 'Something went wrong. Please try again.'
-          });
-        }
-      } catch (apiError) {
-        // If API fails, show demo success message
-        if (apiError.response?.status === 404 || apiError.code === 'ERR_NETWORK') {
-          console.log('Note: Backend API not running. Showing demo message.');
-          setStatus({
-            type: 'success',
-            message: 'Your message has been sent! (Demo mode - backend not running)'
-          });
-          setFormData({ name: '', email: '', phone: '', message: '' });
-        } else {
-          throw apiError;
-        }
+      if (response.data.success) {
+        setStatus({
+          type: 'success',
+          message: response.data.message || 'Your message has been sent successfully!'
+        });
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        setStatus({
+          type: 'error',
+          message: response.data.message || 'Something went wrong. Please try again.'
+        });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
       setStatus({
         type: 'error',
-        message: 'Failed to send message. Please try again later.'
+        message: error.response?.data?.message || 'Failed to send message. Please try again later.'
       });
     } finally {
       setLoading(false);
