@@ -49,14 +49,63 @@ export const Home = () => {
 
             <motion.div
               variants={itemVariants}
-              className="relative h-96 md:h-full"
+              className="relative h-96 md:h-full flex items-center justify-center"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl blur-3xl opacity-20"></div>
-              <img
-                src="https://images.unsplash.com/photo-1553531088-2f6b6d592e45?w=600&h=500&fit=crop"
-                alt="Hero"
-                className="relative rounded-2xl w-full h-full object-cover shadow-xl"
-              />
+              <svg className="w-full h-full max-w-2xl" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Background circle */}
+                <circle cx="200" cy="200" r="190" fill="#f0f4ff" />
+                
+                {/* Computer/Laptop Illustration */}
+                <g>
+                  {/* Screen */}
+                  <rect x="80" y="100" width="240" height="160" rx="8" fill="#1e40af" />
+                  <rect x="85" y="105" width="230" height="150" rx="4" fill="#3b82f6" />
+                  
+                  {/* Content on screen - bars */}
+                  <rect x="100" y="120" width="120" height="8" rx="4" fill="#60a5fa" opacity="0.7" />
+                  <rect x="100" y="135" width="180" height="6" rx="3" fill="#93c5fd" opacity="0.6" />
+                  <rect x="100" y="150" width="180" height="6" rx="3" fill="#93c5fd" opacity="0.6" />
+                  <rect x="100" y="165" width="140" height="6" rx="3" fill="#93c5fd" opacity="0.6" />
+                  <rect x="100" y="180" width="160" height="6" rx="3" fill="#93c5fd" opacity="0.6" />
+                  <rect x="100" y="195" width="120" height="6" rx="3" fill="#93c5fd" opacity="0.6" />
+                  
+                  {/* Laptop base */}
+                  <path d="M 70 270 L 330 270 L 310 285 L 90 285 Z" fill="#374151" />
+                  <rect x="75" y="270" width="250" height="8" rx="2" fill="#4b5563" />
+                </g>
+                
+                {/* Floating elements - cards */}
+                <g>
+                  {/* Card 1 */}
+                  <g transform="translate(50, 180)">
+                    <rect width="80" height="60" rx="6" fill="#fbbf24" opacity="0.9" />
+                    <circle cx="20" cy="15" r="8" fill="#f59e0b" />
+                    <rect x="35" y="10" width="35" height="4" rx="2" fill="#f59e0b" />
+                    <rect x="35" y="18" width="30" height="3" rx="1" fill="#f59e0b" opacity="0.6" />
+                  </g>
+                  
+                  {/* Card 2 */}
+                  <g transform="translate(290, 150)">
+                    <rect width="80" height="60" rx="6" fill="#34d399" opacity="0.9" />
+                    <circle cx="20" cy="15" r="8" fill="#10b981" />
+                    <rect x="35" y="10" width="35" height="4" rx="2" fill="#10b981" />
+                    <rect x="35" y="18" width="30" height="3" rx="1" fill="#10b981" opacity="0.6" />
+                  </g>
+                  
+                  {/* Card 3 */}
+                  <g transform="translate(150, 50)">
+                    <rect width="80" height="60" rx="6" fill="#a78bfa" opacity="0.9" />
+                    <circle cx="20" cy="15" r="8" fill="#8b5cf6" />
+                    <rect x="35" y="10" width="35" height="4" rx="2" fill="#8b5cf6" />
+                    <rect x="35" y="18" width="30" height="3" rx="1" fill="#8b5cf6" opacity="0.6" />
+                  </g>
+                </g>
+                
+                {/* Decorative elements */}
+                <circle cx="100" cy="80" r="3" fill="#3b82f6" opacity="0.4" />
+                <circle cx="350" cy="320" r="2" fill="#3b82f6" opacity="0.4" />
+                <circle cx="50" cy="300" r="2.5" fill="#3b82f6" opacity="0.4" />
+              </svg>
             </motion.div>
           </motion.div>
         </div>

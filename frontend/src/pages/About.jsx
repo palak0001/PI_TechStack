@@ -188,15 +188,15 @@ export const About = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="relative">
-                  <Card className="text-center h-full">
+                <div className="relative h-full">
+                  <Card className="text-center h-full flex flex-col">
                     <div className="text-4xl font-bold text-blue-600 mb-2">
                       {item.step}
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    <h3 className="text-base font-bold text-gray-900 mb-3 line-clamp-2 flex-shrink-0">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-gray-600">{item.description}</p>
+                    <p className="text-sm text-gray-600 flex-grow">{item.description}</p>
                   </Card>
                   {index < process.length - 1 && (
                     <div className="hidden md:block absolute -right-2 top-1/2 transform translate-x-full w-4 h-1 bg-blue-600 -translate-y-1/2"></div>

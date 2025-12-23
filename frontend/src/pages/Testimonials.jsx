@@ -157,14 +157,14 @@ export const Testimonials = () => {
           >
             {testimonialsData.map((testimonial) => (
               <motion.div key={testimonial.id} variants={itemVariants}>
-                <Card className="h-full">
+                <Card className="h-full flex flex-col">
                   <div className="flex items-center gap-4 mb-4">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover"
+                      className="w-16 h-16 rounded-full object-cover flex-shrink-0"
                     />
-                    <div>
+                    <div className="flex-grow">
                       <p className="font-bold text-gray-900">{testimonial.name}</p>
                       <p className="text-sm text-gray-600">
                         {testimonial.role}
@@ -181,7 +181,7 @@ export const Testimonials = () => {
                     ))}
                   </div>
 
-                  <p className="text-gray-600 italic">
+                  <p className="text-gray-600 italic flex-grow">
                     "{testimonial.message}"
                   </p>
                 </Card>

@@ -1,3 +1,5 @@
+import healthImg from '../assets/health.svg';
+
 export const servicesData = [
   {
     id: 1,
@@ -48,7 +50,7 @@ export const servicesData = [
       },
       {
         name: 'Health & Fitness Platform',
-        image: 'https://images.unsplash.com/photo-1553531088-2f6b6d592e45?w=500&h=300&fit=crop',
+        image: healthImg,
         tech: ['Adobe XD', 'Design System']
       }
     ]
@@ -88,7 +90,7 @@ export const projectsData = [
     name: 'E-Commerce Platform',
     category: 'Web Development',
     shortDesc: 'Full-stack e-commerce solution with payment integration',
-    image: 'https://images.unsplash.com/photo-1460925895917-adf4e565db96?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
     link: '#'
   },
@@ -115,7 +117,7 @@ export const projectsData = [
     name: 'Health & Fitness Platform',
     category: 'Web Development',
     shortDesc: 'Comprehensive fitness tracking and coaching platform',
-    image: 'https://images.unsplash.com/photo-1553531088-2f6b6d592e45?w=600&h=400&fit=crop',
+    image: healthImg,
     technologies: ['Vue.js', 'Firebase', 'TailwindCSS'],
     link: '#'
   },
