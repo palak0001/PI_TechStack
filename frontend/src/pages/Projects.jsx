@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Card, Badge } from '../components/Common.jsx';
+import { Card, Badge, Modal } from '../components/Common.jsx';
 import { projectsData } from '../data/content.js';
 
 const containerVariants = {
@@ -23,6 +23,13 @@ export const Projects = () => {
   const filteredProjects = selectedCategory === 'All'
     ? projectsData
     : projectsData.filter(p => p.category === selectedCategory);
+
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const screenshots = selectedProject ? (selectedProject.screenshots || []) : [];
+  const firstTwo = screenshots.slice(0, 2);
+  const restScreens = screenshots.slice(2);
+  const [lightboxSrc, setLightboxSrc] = useState(null);
 
   return (
     <div>
@@ -110,17 +117,75 @@ export const Projects = () => {
                     ))}
                   </div>
 
-                  <motion.a
-                    href={project.link}
+                  <motion.button
                     whileHover={{ x: 5 }}
+                    onClick={() => { setSelectedProject(project); setIsModalOpen(true); }}
                     className="text-blue-600 font-bold hover:text-blue-700 transition-smooth inline-flex items-center gap-2"
                   >
                     View Project →
-                  </motion.a>
+                  </motion.button>
                 </Card>
               </motion.div>
             ))}
           </motion.div>
+
+          {selectedProject && (
+            <Modal
+              isOpen={isModalOpen}
+              onClose={() => { setIsModalOpen(false); setSelectedProject(null); }}
+              title={selectedProject.name}
+            >
+              <div className="space-y-4">
+                <p className="text-gray-700">{selectedProject.shortDesc}</p>
+
+                {/* Show first two screenshots prominently */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {firstTwo.map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      onClick={() => setLightboxSrc(src)}
+                      alt={`${selectedProject.name} screenshot ${i+1}`}
+                      className="w-full h-56 md:h-64 object-cover rounded-md cursor-pointer"
+                    />
+                  ))}
+                </div>
+
+                {/* Remaining screenshots as smaller thumbnails */}
+                {restScreens.length > 0 && (
+                  <div>
+                    <h4 className="text-sm text-gray-500 mb-2">More screenshots</h4>
+                    <div className="grid grid-cols-3 gap-3">
+                      {restScreens.map((src, i) => (
+                        <img
+                          key={i}
+                          src={src}
+                          onClick={() => setLightboxSrc(src)}
+                          alt={`${selectedProject.name} extra screenshot ${i+1}`}
+                          className="w-full h-32 object-cover rounded-md cursor-pointer"
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {selectedProject.technologies.map((t) => (
+                    <Badge key={t} variant="beige">{t}</Badge>
+                  ))}
+                </div>
+                {/* Removed 'Visit Project' link per request */}
+              </div>
+            </Modal>
+          )}
+
+          {lightboxSrc && (
+            <Modal isOpen={true} onClose={() => setLightboxSrc(null)} title={null}>
+              <div className="flex justify-center p-4">
+                <img src={lightboxSrc} alt="Large screenshot" className="max-h-[80vh] w-auto object-contain rounded-md" />
+              </div>
+            </Modal>
+          )}
 
           {filteredProjects.length === 0 && (
             <motion.div
