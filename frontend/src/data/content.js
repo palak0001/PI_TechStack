@@ -160,7 +160,7 @@ export const projectsData = [
     link: '#',
     screenshots: [
       'https://cdn.dribbble.com/users/4030027/screenshots/19299823/media/b929e973307b6246352bda9fe0cfd64f.png?resize=400x300&vertical=center',
-      'https://th.bing.com/th/id/OIP.Lol9FUs7OWMftC08BQ72cQHaFj?w=227&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/1400/25c519125072615.6111a9085c702.png'
     ]
   }
 ];
