@@ -61,10 +61,17 @@ export const Contact = () => {
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      setStatus({
-        type: 'error',
-        message: error.response?.data?.message || 'Failed to send message. Please try again later.'
-      });
+      // If backend returned validation errors (array), extract and show them
+      const validationErrors = error.response?.data?.errors;
+      if (Array.isArray(validationErrors) && validationErrors.length > 0) {
+        const messages = validationErrors.map(err => err.msg).join(' ');
+        setStatus({ type: 'error', message: messages });
+      } else {
+        setStatus({
+          type: 'error',
+          message: error.response?.data?.message || 'Failed to send message. Please try again later.'
+        });
+      }
     } finally {
       setLoading(false);
     }
@@ -211,7 +218,7 @@ export const Contact = () => {
 
                   <div>
                     <label htmlFor="phone" className="block text-gray-700 font-semibold mb-2">
-                      Phone Number
+                      Phone Number *
                     </label>
                     <input
                       type="tel"
@@ -219,6 +226,7 @@ export const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
+                      required
                       placeholder="+1 (234) 567-890"
                       className="w-full px-4 py-3 rounded-lg border border-beige-300 focus:border-blue-600 focus:outline-none transition-smooth"
                     />
