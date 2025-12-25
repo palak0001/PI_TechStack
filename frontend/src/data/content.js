@@ -50,7 +50,7 @@ export const servicesData = [
       },
       {
         name: 'Health & Fitness Platform',
-        image: healthImg,
+        image: 'https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?w=500&h=300&fit=crop',
         tech: ['Adobe XD', 'Design System']
       }
     ]
@@ -117,7 +117,7 @@ export const projectsData = [
     name: 'Health & Fitness Platform',
     category: 'Web Development',
     shortDesc: 'Comprehensive fitness tracking and coaching platform',
-    image: healthImg,
+    image: 'https://images.unsplash.com/vector-1738590592306-6580737c57dc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGVhbHRoJTIwJTI2JTIwZml0bmVzcyUyMGlsbHVzdHJhdGlvbnN8ZW58MHx8MHx8fDA%3D',
     technologies: ['Vue.js', 'Firebase', 'TailwindCSS'],
     link: '#'
   },
@@ -135,7 +135,7 @@ export const projectsData = [
     name: 'Social Media Platform',
     category: 'Web Development',
     shortDesc: 'Community-driven social network',
-    image: 'https://images.unsplash.com/photo-1460925895917-adf4e565db96?w=600&h=400&fit=crop',
+    image: 'https://plus.unsplash.com/premium_vector-1724157909853-b0d29c620586?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8U29jaWFsJTIwTWVkaWF8ZW58MHx8MHx8fDA%3D',
     technologies: ['React', 'GraphQL', 'PostgreSQL'],
     link: '#'
   }
