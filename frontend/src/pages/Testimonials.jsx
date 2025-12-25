@@ -1,7 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { Card } from '../components/Common.jsx';
 import { testimonialsData } from '../data/content.js';
+
+// Counter Animation Component
+const CounterAnimation = ({ target, suffix = '', duration = 2 }) => {
+  const [count, setCount] = useState(0);
+  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+
+  useEffect(() => {
+    if (!inView) return;
+
+    const numericTarget = parseInt(target) || 0;
+    const steps = 60;
+    const increment = numericTarget / steps;
+    let current = 0;
+
+    const interval = setInterval(() => {
+      current += increment;
+      if (current >= numericTarget) {
+        setCount(numericTarget);
+        clearInterval(interval);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, (duration * 1000) / steps);
+
+    return () => clearInterval(interval);
+  }, [inView, target, duration]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+};
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -202,14 +232,14 @@ export const Testimonials = () => {
             className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center"
           >
             {[
-              { number: '100+', label: 'Projects Completed' },
-              { number: '98%', label: 'Client Satisfaction' },
-              { number: '50+', label: 'Happy Clients' },
-              { number: '5★', label: 'Average Rating' }
+              { number: '75', suffix: '+', label: 'Projects Completed' },
+              { number: '98', suffix: '%', label: 'Client Satisfaction' },
+              { number: '50', suffix: '+', label: 'Happy Clients' },
+              { number: '5', suffix: '★', label: 'Average Rating' }
             ].map((stat, index) => (
               <motion.div key={index} variants={itemVariants}>
                 <div className="text-4xl font-bold text-blue-600 mb-2">
-                  {stat.number}
+                  <CounterAnimation target={stat.number} suffix={stat.suffix} duration={2} />
                 </div>
                 <p className="text-gray-600 font-semibold">{stat.label}</p>
               </motion.div>

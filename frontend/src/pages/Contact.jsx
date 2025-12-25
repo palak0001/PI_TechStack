@@ -74,19 +74,19 @@ export const Contact = () => {
     {
       icon: '📧',
       title: 'Email',
-      value: 'hello@pitechstack.com',
-      href: 'mailto:hello@pitechstack.com'
+      value: 'pitechstack@gmail.com',
+      href: 'mailto:pitechstack@gmail.com.com'
     },
     {
       icon: '📱',
-      title: 'Phone',
-      value: '+1 (234) 567-890',
-      href: 'tel:+1234567890'
+      title: 'WhatsApp (Only Message)',
+      value: '+91 78629 64719',
+      href: 'tel:+91 78629 64719'
     },
     {
       icon: '📍',
       title: 'Address',
-      value: '123 Tech Street, Digital City, DC 12345',
+      value: 'Gujarat,India',
       href: '#'
     },
     {
@@ -274,35 +274,8 @@ export const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section (Placeholder) */}
-      <section className="py-20 bg-beige-50">
-        <div className="container-custom">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-center text-gray-900 mb-8"
-          >
-            Find Us
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="w-full h-96 bg-gray-300 rounded-lg overflow-hidden shadow-lg flex items-center justify-center"
-          >
-            <div className="text-center">
-              <div className="text-4xl mb-4">📍</div>
-              <p className="text-gray-700 font-semibold">
-                123 Tech Street, Digital City, DC 12345
-              </p>
-              <p className="text-gray-600 mt-2">
-                (Map integration can be added here)
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+     
+
     </div>
   );
 };

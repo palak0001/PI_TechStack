@@ -304,7 +304,7 @@ export const Home = () => {
             Let's work together to create something amazing. Contact us today to discuss your project.
           </p>
           <Link to="/contact">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
+            <Button size="lg" className="bg-white text-blue-700 font-semibold hover:bg-gray-100 hover:text-blue-800">
               Get in Touch
             </Button>
           </Link>

@@ -115,17 +115,17 @@ export const Footer = () => {
           >
             <p className="text-gray-700 font-semibold mb-2">📧 Email</p>
             <a
-              href="mailto:hello@pitechstack.com"
+              href="mailto:pitechstack@gmai.com"
               className="text-blue-600 hover:underline"
             >
-              hello@pitechstack.com
+              pitechstack@gmai.com
             </a>
-            <p className="text-gray-700 font-semibold mt-4 mb-2">📱 Phone</p>
+            <p className="text-gray-700 font-semibold mt-4 mb-2">📱 WhatsApp (Only Message)</p>
             <a
-              href="tel:+1234567890"
+              href="tel:+91 78629 64719"
               className="text-blue-600 hover:underline"
             >
-              +1 (234) 567-890
+              +91 78629 64719
             </a>
           </motion.div>
 
