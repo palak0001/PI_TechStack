@@ -92,7 +92,11 @@ export const projectsData = [
     shortDesc: 'Full-stack e-commerce solution with payment integration',
     image: 'https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    link: '#'
+    link: '#',
+    screenshots: [
+      'https://cdn.dribbble.com/userupload/14566366/file/original-36d2e038f1be3028d74cc870e69abc68.png?resize=1600x1200&vertical=center',
+      'https://cdn.dribbble.com/userupload/42549517/file/original-0ac92b771b8ded6724134a04f2e9a49d.png?resize=1600x1200&vertical=center'
+    ]
   },
   {
     id: 2,
@@ -101,16 +105,24 @@ export const projectsData = [
     shortDesc: 'Analytics and management dashboard for businesses',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
     technologies: ['Next.js', 'TypeScript', 'PostgreSQL'],
-    link: '#'
+    link: '#',
+    screenshots: [
+      'https://zdblogs.zohowebstatic.com/sites/analytics/insightshq/files/website_performance_dashboard.png',
+      'https://zdblogs.zohowebstatic.com/sites/analytics/insightshq/files/ecommerce_dashboard.png'
+    ]
   },
   {
     id: 3,
     name: 'Mobile Banking App',
     category: 'UI/UX Design',
     shortDesc: 'Intuitive mobile app for financial transactions',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
+    image: 'https://media.istockphoto.com/id/1414580827/vector/credit-card-security-in-mobile.webp?a=1&b=1&s=612x612&w=0&k=20&c=EUFK3Ck5ql5ipHOX3UI00EmEI5NltQJPabPytniwuYM=',
     technologies: ['Figma', 'React Native'],
-    link: '#'
+    link: '#',
+    screenshots: [
+      'https://www.shutterstock.com/image-vector/sophisticated-bank-app-interface-design-260nw-2459381855.jpg',
+      'https://cdn.dribbble.com/userupload/4931360/file/original-3a6eeca1031b86658bf42557e7909e89.jpg?resize=%7Bwidth%7Dx%7Bheight%7D&vertical=center'
+    ]
   },
   {
     id: 4,
@@ -119,7 +131,11 @@ export const projectsData = [
     shortDesc: 'Comprehensive fitness tracking and coaching platform',
     image: 'https://images.unsplash.com/vector-1738590592306-6580737c57dc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGVhbHRoJTIwJTI2JTIwZml0bmVzcyUyMGlsbHVzdHJhdGlvbnN8ZW58MHx8MHx8fDA%3D',
     technologies: ['Vue.js', 'Firebase', 'TailwindCSS'],
-    link: '#'
+    link: '#',
+    screenshots: [
+      'https://cdn.dribbble.com/userupload/20026415/file/original-f11a5e42a4994cdba0934946f4e4966e.png?resize=1504x1128&vertical=center',
+      'https://s3-alpha.figma.com/hub/file/2664562462/eb323faa-a96d-46ab-89e4-1a1874048c95-cover.png'
+    ]
   },
   {
     id: 5,
@@ -128,7 +144,11 @@ export const projectsData = [
     shortDesc: 'Complete visual identity for tech startup',
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
     technologies: ['Illustrator', 'Design System'],
-    link: '#'
+    link: '#',
+    screenshots: [
+      'https://images.unsplash.com/photo-1649000809102-61d0fe6759b9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8QnJhbmQlMjBJZGVudGl0eSUyMFN1aXRlJTIwbG9nb3xlbnwwfHwwfHx8MA%3D%3D',
+      'https://www.clinkitsolutions.com/wp-content/uploads/2023/07/Blog_Jul5_15-Key-Elements-of-a-Strong-Brand-Identity.jpg'
+    ]
   },
   {
     id: 6,
@@ -137,7 +157,11 @@ export const projectsData = [
     shortDesc: 'Community-driven social network',
     image: 'https://plus.unsplash.com/premium_vector-1724157909853-b0d29c620586?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8U29jaWFsJTIwTWVkaWF8ZW58MHx8MHx8fDA%3D',
     technologies: ['React', 'GraphQL', 'PostgreSQL'],
-    link: '#'
+    link: '#',
+    screenshots: [
+      'https://cdn.dribbble.com/users/4030027/screenshots/19299823/media/b929e973307b6246352bda9fe0cfd64f.png?resize=400x300&vertical=center',
+      'https://th.bing.com/th/id/OIP.Lol9FUs7OWMftC08BQ72cQHaFj?w=227&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
+    ]
   }
 ];
 
