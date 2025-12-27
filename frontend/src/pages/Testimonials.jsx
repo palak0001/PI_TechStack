@@ -98,10 +98,13 @@ export const Testimonials = () => {
             <Card className="relative p-12 text-center">
               <div className="text-6xl text-blue-600 mb-6">"</div>
 
-              <img
+              <motion.img
                 src={testimonialsData[currentIndex].image}
                 alt={testimonialsData[currentIndex].name}
                 className="w-20 h-20 rounded-full mx-auto mb-6 object-cover"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.4 }}
               />
 
               <p className="text-2xl text-gray-900 mb-6 italic font-light">
@@ -189,10 +192,14 @@ export const Testimonials = () => {
               <motion.div key={testimonial.id} variants={itemVariants}>
                 <Card className="h-full flex flex-col">
                   <div className="flex items-center gap-4 mb-4">
-                    <img
+                    <motion.img
                       src={testimonial.image}
                       alt={testimonial.name}
                       className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                      initial={{ scale: 0.95, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.35 }}
                     />
                     <div className="flex-grow">
                       <p className="font-bold text-gray-900">{testimonial.name}</p>
@@ -232,9 +239,9 @@ export const Testimonials = () => {
             className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center"
           >
             {[
-              { number: '75', suffix: '+', label: 'Projects Completed' },
+              { number: '15+', suffix: '+', label: 'Projects Completed' },
               { number: '98', suffix: '%', label: 'Client Satisfaction' },
-              { number: '50', suffix: '+', label: 'Happy Clients' },
+              { number: '20+', suffix: '+', label: 'Happy Clients' },
               { number: '5', suffix: '★', label: 'Average Rating' }
             ].map((stat, index) => (
               <motion.div key={index} variants={itemVariants}>

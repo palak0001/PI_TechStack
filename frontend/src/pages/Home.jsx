@@ -188,10 +188,14 @@ export const Home = () => {
             {projectsData.slice(0, 3).map((project) => (
               <motion.div key={project.id} variants={itemVariants}>
                 <Card className="overflow-hidden h-full">
-                  <img
+                  <motion.img
                     src={project.image}
                     alt={project.name}
                     className="w-full h-48 object-cover mb-4 rounded-lg"
+                    initial={{ scale: 0.98, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.45, ease: 'easeOut' }}
                   />
                   <Badge variant="primary">{project.category}</Badge>
                   <h3 className="text-xl font-bold text-gray-900 mt-4 mb-2">
@@ -249,10 +253,14 @@ export const Home = () => {
               <motion.div key={testimonial.id} variants={itemVariants}>
                 <Card>
                   <div className="flex items-center gap-4 mb-4">
-                    <img
+                    <motion.img
                       src={testimonial.image}
                       alt={testimonial.name}
                       className="w-12 h-12 rounded-full object-cover"
+                      initial={{ scale: 0.95, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.35 }}
                     />
                     <div>
                       <p className="font-bold text-gray-900">{testimonial.name}</p>
@@ -304,7 +312,7 @@ export const Home = () => {
             Let's work together to create something amazing. Contact us today to discuss your project.
           </p>
           <Link to="/contact">
-            <Button size="lg" className="bg-white text-blue-700 font-semibold hover:bg-gray-100 hover:text-blue-800">
+            <Button size="lg" variant="white" className="font-semibold">
               Get in Touch
             </Button>
           </Link>

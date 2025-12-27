@@ -77,7 +77,7 @@ export const servicesData = [
       },
       {
         name: 'Fashion Brand Identity',
-        image: 'https://images.unsplash.com/photo-1578926078328-123456789?w=500&h=300&fit=crop',
+        image: 'https://images.unsplash.com/photo-1649000809102-61d0fe6759b9?w=500&h=300&fit=crop',
         tech: ['Illustrator', 'Photoshop']
       }
     ]
