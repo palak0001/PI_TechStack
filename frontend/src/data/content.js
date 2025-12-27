@@ -18,7 +18,7 @@ export const servicesData = [
     projects: [
       {
         name: 'E-Commerce Platform',
-        image: 'https://images.unsplash.com/photo-1460925895917-adf4e565db96?w=500&h=300&fit=crop',
+        image: 'https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         tech: ['React', 'Node.js', 'MongoDB']
       },
       {
