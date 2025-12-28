@@ -5,7 +5,8 @@ export const Button = ({ children, onClick, className = '', variant = 'primary',
   const variants = {
     primary: 'bg-blue-600 text-white hover:bg-blue-700',
     secondary: 'bg-beige-100 text-blue-600 hover:bg-beige-200',
-    outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50'
+    outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50',
+    white: 'bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white'
   };
 
   const sizes = {
@@ -16,8 +17,9 @@ export const Button = ({ children, onClick, className = '', variant = 'primary',
 
   return (
     <motion.button
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.03, y: -2 }}
+      whileTap={{ scale: 0.97, y: 0 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 20 }}
       onClick={onClick}
       className={`${variants[variant]} ${sizes[size]} rounded-lg font-semibold transition-smooth ${className}`}
       {...props}
@@ -30,8 +32,11 @@ export const Button = ({ children, onClick, className = '', variant = 'primary',
 export const Card = ({ children, className = '', hover = true, ...props }) => {
   return (
     <motion.div
-      whileHover={hover ? { y: -5 } : {}}
-      className={`bg-white rounded-lg border border-beige-200 p-6 shadow-soft transition-smooth ${className}`}
+      layout
+      whileHover={hover ? { y: -8, scale: 1.01, boxShadow: '0 20px 40px rgba(2,6,23,0.08)' } : {}}
+      whileTap={{ scale: 0.995 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 24 }}
+      className={`bg-white rounded-lg border border-beige-200 p-6 shadow-soft transition-smooth will-change-transform ${className}`}
       {...props}
     >
       {children}
@@ -51,10 +56,11 @@ export const Modal = ({ isOpen, onClose, children, title }) => {
       onClick={onClose}
     >
       <motion.div
-        initial={{ scale: 0.9, opacity: 0 }}
+        initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.9, opacity: 0 }}
-        className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+        exit={{ scale: 0.95, opacity: 0 }}
+        transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+        className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto ring-1 ring-black ring-opacity-5"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="sticky top-0 bg-white border-b border-beige-200 p-6 flex justify-between items-center">

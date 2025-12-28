@@ -142,10 +142,14 @@ export const Services = () => {
                       transition={{ delay: index * 0.1 }}
                       className="rounded-lg overflow-hidden"
                     >
-                      <img
+                      <motion.img
                         src={project.image}
                         alt={project.name}
                         className="w-full h-40 object-cover mb-3 rounded-lg"
+                        initial={{ y: 6, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        whileHover={{ scale: 1.03 }}
+                        transition={{ duration: 0.4 }}
                       />
                       <h4 className="font-bold text-gray-900 mb-2">{project.name}</h4>
                       <div className="flex flex-wrap gap-2">
